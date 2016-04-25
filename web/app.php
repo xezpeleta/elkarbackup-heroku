@@ -26,7 +26,9 @@ $kernel->loadClassCache();
 //Request::enableHttpMethodParameterOverride();
 
 // Heroku trusted proxy
-Request::setTrustedProxies(array($request->server->get('REMOTE_ADDR')));
+//Request::setTrustedProxies(array($request->server->get('REMOTE_ADDR')));
+Request::setTrustedProxies(array('127.0.0.1', $request->server->get('REMOTE_ADDR')));
+
 
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
