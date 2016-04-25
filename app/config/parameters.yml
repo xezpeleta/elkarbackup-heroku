@@ -8,9 +8,9 @@ parameters:
     locale: en
     secret: fba546d6ab6abc4a01391d161772a14e093c7aa2
     database_path: null
-    upload_dir: /var/spool/elkarbackup/uploads
-    backup_dir: /var/spool/elkarbackup/backups
-    public_key: /var/lib/elkarbackup/.ssh/id_rsa.pub
+    upload_dir: /app/uploads
+    backup_dir: /app/backups
+    public_key: /app/elkarbackup/.ssh/id_rsa.pub
     max_log_age: P1Y
     tmp_dir: /tmp
     rsnapshot: /usr/bin/rsnapshot
@@ -20,4 +20,4 @@ parameters:
     disable_background: false
     mailer_from: null
     tahoe_active: false
-    home: /var/lib/elkarbackup
+    home: /app/elkarbackup
