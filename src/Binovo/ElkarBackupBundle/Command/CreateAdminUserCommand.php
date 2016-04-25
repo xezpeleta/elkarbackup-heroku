@@ -25,11 +25,13 @@ class CreateAdminUserCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        /*
         if (0 != posix_geteuid()) {
             echo "You have to be root to run this command\n";
 
             return 1;
         }
+        */
         $container = $this->getContainer();
         $doctrine = $container->get('doctrine');
         $em = $doctrine->getManager();
