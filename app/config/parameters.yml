@@ -1,11 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_driver: pdo_mysql
-    database_host: localhost
-    database_port: null
-    database_name: elkarbackup
-    database_user: elkarbackup
-    database_password: elkarbackup
+    database_url: ~
     mailer_transport: smtp
     mailer_host: localhost
     mailer_user: null
