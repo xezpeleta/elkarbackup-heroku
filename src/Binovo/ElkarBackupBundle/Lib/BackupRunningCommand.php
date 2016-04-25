@@ -50,7 +50,7 @@ abstract class BackupRunningCommand extends LoggingCommand
     protected function sendNotifications(Job $job, $messages)
     {
         $container        = $this->getContainer();
-        $adminEmail       = $container->get('doctrine')->getRepository('BinovoElkarBackupBundle:User')->find(User::SUPERUSER_ID)->getEmail();
+        $adminEmail       = $container->get('doctrine')->getRepository('BinovoElkarBackupBundle:User')->find("admin")->getEmail();
         if ($container->hasParameter('mailer_from') && $container->getParameter('mailer_from') != "") {
           $fromEmail      = $container->getParameter('mailer_from');
         } else {
