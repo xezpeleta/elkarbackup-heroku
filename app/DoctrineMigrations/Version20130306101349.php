@@ -27,17 +27,6 @@ class Version20130306101349 extends AbstractMigration
                 $maxId = max($maxId, (int)$matches[1]);
             }
         }
-        $nextId = $maxId + 1;
-        $description =<<<EOF
-Use this script as pre client and post client script (yes, both) if you want to trigger snapshot creation on Windows machines.
-
-In order for this script to work you will have to install the contents of the /usr/share/elkarbackup/extra/windows (this is the default path, might be some other in your system) in the Windows machine.
-
-You will find more information regarding the Windows-side configuration of this feature in the aforementioned directory.
-EOF;
-        $this->addSql("INSERT INTO Script VALUES (?, ?, 'TriggerSnapshotGenerateOrDelete.sh', 1, 0, 1, 0, NULL)", array($nextId, $description));
-        $this->abortIf(!copy("/usr/share/elkarbackup/extra/windows/TriggerSnapshotGenerateOrDelete.sh", Globals::getUploadDir() . "/" . sprintf("%04d.script", $nextId)));
-        $this->abortIf(!chmod(Globals::getUploadDir() . "/" . sprintf("%04d.script", $nextId), 0755));
     }
 
     public function down(Schema $schema)
