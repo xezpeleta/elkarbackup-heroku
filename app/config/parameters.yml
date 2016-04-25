@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_url: ~
+    database_url: null
     mailer_transport: smtp
     mailer_host: localhost
     mailer_user: null
