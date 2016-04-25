@@ -15,7 +15,7 @@
 # Symfony2 personal gitignore #
 ###############################
 /web/js/
-!/web/js/jquery
+!/web/js/jquery/*js
 !/web/js/dojo-release
 !/web/js/dojo-release-*
 /web/css/*
