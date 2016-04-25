@@ -24,6 +24,10 @@ $kernel->loadClassCache();
 
 // When using the HttpCache, you need to call the method in your front controller instead of relying on the configuration parameter
 //Request::enableHttpMethodParameterOverride();
+
+// Heroku trusted proxy
+Request::setTrustedProxies(array($request->server->get('REMOTE_ADDR')));
+
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
